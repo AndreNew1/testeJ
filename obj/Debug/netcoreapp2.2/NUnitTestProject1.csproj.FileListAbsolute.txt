@@ -1,9 +1,4 @@
-C:\Users\Treinamento 2\Desktop\NUnitTestProject1\bin\Debug\netcoreapp2.2\NUnit3.TestAdapter.dll
-C:\Users\Treinamento 2\Desktop\NUnitTestProject1\bin\Debug\netcoreapp2.2\NUnit3.TestAdapter.pdb
-C:\Users\Treinamento 2\Desktop\NUnitTestProject1\bin\Debug\netcoreapp2.2\nunit.engine.netstandard.dll
 C:\Users\Treinamento 2\Desktop\NUnitTestProject1\bin\Debug\netcoreapp2.2\NUnitTestProject1.deps.json
-C:\Users\Treinamento 2\Desktop\NUnitTestProject1\bin\Debug\netcoreapp2.2\NUnitTestProject1.runtimeconfig.json
-C:\Users\Treinamento 2\Desktop\NUnitTestProject1\bin\Debug\netcoreapp2.2\NUnitTestProject1.runtimeconfig.dev.json
 C:\Users\Treinamento 2\Desktop\NUnitTestProject1\bin\Debug\netcoreapp2.2\NUnitTestProject1.dll
 C:\Users\Treinamento 2\Desktop\NUnitTestProject1\obj\Debug\netcoreapp2.2\NUnitTestProject1.csprojAssemblyReference.cache
 C:\Users\Treinamento 2\Desktop\NUnitTestProject1\obj\Debug\netcoreapp2.2\NUnitTestProject1.AssemblyInfoInputs.cache
