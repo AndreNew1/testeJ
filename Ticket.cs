@@ -1,74 +1,71 @@
-using System;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.Support.UI;
+using System;
+using System.Text;
+using System.Threading;
 
 namespace SeleniumTests
 {
     [TestFixture]
     public class UntitledTestCase
     {
-        private IWebDriver driver;
-        private StringBuilder verificationErrors;
-        private string baseURL;
-        private bool acceptNextAlert = true;
-        
+        private IWebDriver Driver;
+        private StringBuilder VerificationErrors;
+        private string BaseURL;
+        private bool AcceptNextAlert = true;
+
         [SetUp]
         public void SetupTest()
         {
             FirefoxDriverService service = FirefoxDriverService.CreateDefaultService($"{AppDomain.CurrentDomain.BaseDirectory}", "geckodriver.exe");
-            driver = new FirefoxDriver(service);
-            baseURL = "https://www.katalon.com/";
-            verificationErrors = new StringBuilder();
+            Driver = new FirefoxDriver(service);
+            BaseURL = "https://fronttickets.azurewebsites.net/";
+            VerificationErrors = new StringBuilder();
         }
-        
+
         [TearDown]
         public void TeardownTest()
         {
             try
             {
-                driver.Quit();
+                Driver.Quit();
             }
             catch (Exception)
             {
                 // Ignore errors if unable to close the browser
             }
-            Assert.AreEqual("", verificationErrors.ToString());
+            Assert.AreEqual("", VerificationErrors.ToString());
         }
-        
+
         [Test]
         public void TheUntitledTestCaseTest()
         {
-            driver.Navigate().GoToUrl("https://fronttickets.azurewebsites.net/");
-            driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='E-mail'])[1]/following::input[1]")).Click();
-            driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Login'])[1]/following::input[1]")).Clear();
-            driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Login'])[1]/following::input[1]")).SendKeys("andre@atendente.com");
-            driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Senha'])[1]/following::input[1]")).Click();
-            driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Senha'])[1]/following::input[1]")).Clear();
-            driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Senha'])[1]/following::input[1]")).SendKeys("senha1234");
-            driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Senha'])[1]/following::button[1]")).Click();
+            Driver.Navigate().GoToUrl(BaseURL);
+            Driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='E-mail'])[1]/following::input[1]")).Click();
+            Driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Login'])[1]/following::input[1]")).Clear();
+            Driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Login'])[1]/following::input[1]")).SendKeys("andre@atendente.com");
+            Driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Senha'])[1]/following::input[1]")).Click();
+            Driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Senha'])[1]/following::input[1]")).Clear();
+            Driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Senha'])[1]/following::input[1]")).SendKeys("senha1234");
+            Driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Senha'])[1]/following::button[1]")).Click();
             Thread.Sleep(3000);
-            driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Aberto'])[1]/following::div[1]")).Click();
-            driver.FindElement(By.XPath("//div[@id='app']/div/main/div/div/div/div[3]/div/div[2]/div/div[2]/div/div[2]/div/button/span")).Click();
-            driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Mensagem'])[1]/following::textarea[1]")).Click();
-            driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Mensagem'])[1]/following::textarea[1]")).Clear();
-            driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Mensagem'])[1]/following::textarea[1]")).SendKeys("novo");
-            driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Mensagem'])[1]/following::button[1]")).Click();
-            driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Mensagem'])[1]/following::textarea[1]")).Click();
-            driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Mensagem'])[1]/following::textarea[1]")).Clear();
-            driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Mensagem'])[1]/following::textarea[1]")).SendKeys("novo novo");
-            driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Mensagem'])[1]/following::button[1]")).Click();
+            Driver.FindElement(By.XPath("//div[@id='app']/div/main/div/div/div/div[2]/div/div[2]/div/div[3]")).Click();
+            Driver.FindElement(By.XPath("//div[@id='app']/div/main/div/div/div/div[3]/div/div[2]/div/div[2]/div/div[2]/div/button/span")).Click();
+            Driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Mensagem'])[1]/following::textarea[1]")).Click();
+            Driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Mensagem'])[1]/following::textarea[1]")).Clear();
+            Driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Mensagem'])[1]/following::textarea[1]")).SendKeys("novo");
+            Driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Mensagem'])[1]/following::button[1]")).Click();
+            Driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Mensagem'])[1]/following::textarea[1]")).Click();
+            Driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Mensagem'])[1]/following::textarea[1]")).Clear();
+            Driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Mensagem'])[1]/following::textarea[1]")).SendKeys("novo novo");
+            Driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Mensagem'])[1]/following::button[1]")).Click();
         }
         private bool IsElementPresent(By by)
         {
             try
             {
-                driver.FindElement(by);
+                Driver.FindElement(by);
                 return true;
             }
             catch (NoSuchElementException)
@@ -76,12 +73,12 @@ namespace SeleniumTests
                 return false;
             }
         }
-        
+
         private bool IsAlertPresent()
         {
             try
             {
-                driver.SwitchTo().Alert();
+                Driver.SwitchTo().Alert();
                 return true;
             }
             catch (NoAlertPresentException)
@@ -89,19 +86,26 @@ namespace SeleniumTests
                 return false;
             }
         }
-        
-        private string CloseAlertAndGetItsText() {
-            try {
-                IAlert alert = driver.SwitchTo().Alert();
+
+        private string CloseAlertAndGetItsText()
+        {
+            try
+            {
+                IAlert alert = Driver.SwitchTo().Alert();
                 string alertText = alert.Text;
-                if (acceptNextAlert) {
+                if (AcceptNextAlert)
+                {
                     alert.Accept();
-                } else {
+                }
+                else
+                {
                     alert.Dismiss();
                 }
                 return alertText;
-            } finally {
-                acceptNextAlert = true;
+            }
+            finally
+            {
+                AcceptNextAlert = true;
             }
         }
     }

@@ -41,9 +41,15 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
+            "Microsoft.CodeAnalysis.FxCopAnalyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.9.7, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[15.9.0, )"
+              "version": "[16.3.0, )"
             },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
@@ -53,7 +59,7 @@
             },
             "NUnit3TestAdapter": {
               "target": "Package",
-              "version": "[3.11.0, )"
+              "version": "[3.15.1, )"
             },
             "Selenium.WebDriver": {
               "target": "Package",
@@ -69,7 +75,7 @@
             },
             "nunit": {
               "target": "Package",
-              "version": "[3.11.0, )"
+              "version": "[3.12.0, )"
             }
           },
           "imports": [
